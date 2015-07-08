@@ -16,7 +16,7 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         tripListTableView.tableFooterView = UIView(frame: CGRect.zeroRect)
-        tripListTableView.dataSource = self    
+        // tripListTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,10 +44,12 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "TripSegue" {
+        println("segue id: \(segue.identifier)")
+        if segue.identifier == "TripViewCtrlrSegue" {
             let cell = sender as! UITableViewCell
             let tripViewCtrlr = segue.destinationViewController as! TripViewController
             tripViewCtrlr.trip = tripMgr.getTrip(tripListTableView.indexPathForCell(cell)!.row)
+            println("prepseque: \(tripViewCtrlr.trip)")
         }
     }
 

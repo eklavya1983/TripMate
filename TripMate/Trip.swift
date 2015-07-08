@@ -31,6 +31,12 @@ class Trip {
     func addEntry(entry: TripEntry) {
         entries.append(entry)
     }
+    func getEntry(idx: Int) -> TripEntry {
+        return entries[idx]
+    }
+    func getEntriesCount() -> Int {
+        return entries.count
+    }
     
     var info: Info
     private var entries = [TripEntry]()

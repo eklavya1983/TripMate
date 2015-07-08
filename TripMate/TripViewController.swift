@@ -12,17 +12,24 @@ import Photos
 import ImagePickerSheetController
 import MobileCoreServices
 
-class TripViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TripViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
+    
     // Models
     var trip: Trip!
     
+    // Outlets
+    @IBOutlet weak var entryTableView: UITableView!
+    
+    // Actions
     @IBAction func cameraSelected(sender: UIBarButtonItem) {
         self.presentImagePickerSheet()
     }
-    // MARK: View Lifecycle
     
+    // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        entryTableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        println("viewdidload: \(trip)")
     }
     
     // MARK: Other Methods
@@ -85,4 +92,41 @@ class TripViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // Tag location related
+    @IBAction func cancelTagLocationViewController(segue: UIStoryboardSegue) {
+    }
+    @IBAction func confirmTagLocationViewController(segue: UIStoryboardSegue) {
+        if let tagLocationVc = segue.sourceViewController as? TagLocationViewController {
+            let notes = tagLocationVc.locationTextView.text
+            // TODO(Rao): Check for not empty
+            if !notes.isEmpty {
+                var entry = TripEntry()
+                entry.text = notes
+                trip.addEntry(entry)
+                println("Added new trip entry")
+                entryTableView.reloadData()
+            }
+        }
+    }
+    
+    // Table view related
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 1
+    }
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
+        let cnt = trip.getEntriesCount()
+        println("Returning size: \(cnt)")
+        return cnt
+    }
+    func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("TripEntryCell", forIndexPath: indexPath) as! UITableViewCell
+        cell.textLabel?.text = trip.getEntry(indexPath.row).text
+        //        cell.detailTextLabel.text = "Subtitle #\(indexPath.row)"
+        return cell
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44
+    }
 }

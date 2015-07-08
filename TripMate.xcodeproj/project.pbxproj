@@ -17,6 +17,7 @@
 		E37901901B4C2D6A0092322A /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379018F1B4C2D6A0092322A /* TripListViewController.swift */; };
 		E37901921B4C2DFA0092322A /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37901911B4C2DFA0092322A /* NewTripViewController.swift */; };
 		E38213361B4B3933008AC283 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38213351B4B3933008AC283 /* Trip.swift */; };
+		E3E425901B4CF18A00BF31B0 /* TagLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E4258F1B4CF18A00BF31B0 /* TagLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E379018F1B4C2D6A0092322A /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
 		E37901911B4C2DFA0092322A /* NewTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
 		E38213351B4B3933008AC283 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		E3E4258F1B4CF18A00BF31B0 /* TagLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				E304833D1B458DE000320B4C /* TripViewController.swift */,
 				E36BB6EF1B458AC200CBF0F9 /* AppDelegate.swift */,
 				E36BB6F31B458AC200CBF0F9 /* Main.storyboard */,
+				E3E4258F1B4CF18A00BF31B0 /* TagLocationViewController.swift */,
 				E379018F1B4C2D6A0092322A /* TripListViewController.swift */,
 				E37901911B4C2DFA0092322A /* NewTripViewController.swift */,
 				E36BB6F61B458AC200CBF0F9 /* Images.xcassets */,
@@ -296,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E425901B4CF18A00BF31B0 /* TagLocationViewController.swift in Sources */,
 				E38213361B4B3933008AC283 /* Trip.swift in Sources */,
 				E37901901B4C2D6A0092322A /* TripListViewController.swift in Sources */,
 				E37901921B4C2DFA0092322A /* NewTripViewController.swift in Sources */,

@@ -17,10 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="S3Y-Z6-yfj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TripEntryCell" id="uY2-a3-4CI">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uY2-a3-4CI" id="jc6-DN-45H">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gbX-Q8-ebA" id="eRT-4Q-Lat"/>
+                                </connections>
+                            </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Kf-D2-8FU">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fbk-2J-018"/>
+                                    <barButtonItem image="locationtag" id="B1G-Er-Szd">
+                                        <connections>
+                                            <segue destination="WyA-JO-RHm" kind="presentation" identifier="TripViewCtrlrSegue" id="2d0-8b-Cuo"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem image="Camera" id="ynN-jN-0GC">
                                         <connections>
                                             <action selector="cameraSelected:" destination="gbX-Q8-ebA" id="fOL-3S-PPF"/>
@@ -33,15 +54,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Kf-D2-8FU" firstAttribute="bottom" secondItem="UIi-5l-cg0" secondAttribute="top" id="Idm-nJ-RSA"/>
+                            <constraint firstItem="S3Y-Z6-yfj" firstAttribute="bottom" secondItem="UIi-5l-cg0" secondAttribute="top" id="Lo8-TB-LUS"/>
+                            <constraint firstItem="S3Y-Z6-yfj" firstAttribute="trailing" secondItem="9Kf-D2-8FU" secondAttribute="trailing" id="MCG-XF-Dem"/>
+                            <constraint firstItem="S3Y-Z6-yfj" firstAttribute="top" secondItem="k5u-ie-QPg" secondAttribute="top" id="Olh-KL-z6R"/>
                             <constraint firstAttribute="trailing" secondItem="9Kf-D2-8FU" secondAttribute="trailing" id="TWp-gt-kcO"/>
+                            <constraint firstItem="S3Y-Z6-yfj" firstAttribute="leading" secondItem="9Kf-D2-8FU" secondAttribute="leading" id="YLd-ve-Z8k"/>
                             <constraint firstItem="9Kf-D2-8FU" firstAttribute="leading" secondItem="k5u-ie-QPg" secondAttribute="leading" id="bg5-iv-mBt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D8K-D5-4qU"/>
+                    <connections>
+                        <outlet property="entryTableView" destination="S3Y-Z6-yfj" id="0Ql-kt-glA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzS-OI-sEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2427" y="1332"/>
+            <point key="canvasLocation" x="2535" y="1302"/>
         </scene>
         <!--New Trip-->
         <scene sceneID="dJW-Jv-eGy">
@@ -98,6 +126,64 @@
             </objects>
             <point key="canvasLocation" x="3312" y="620"/>
         </scene>
+        <!--Tag Location-->
+        <scene sceneID="ED7-Xf-7df">
+            <objects>
+                <viewController id="RWf-TA-sQ7" customClass="TagLocationViewController" customModule="TripMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v1Y-n0-Eyj"/>
+                        <viewControllerLayoutGuide type="bottom" id="lYo-uR-btJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fhT-sr-JEy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ8-bx-AuL">
+                                <rect key="frame" x="16" y="72" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your text" translatesAutoresizingMaskIntoConstraints="NO" id="bma-RW-lu7">
+                                <rect key="frame" x="16" y="101" width="568" height="78"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="Ykx-qH-bdT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bma-RW-lu7" firstAttribute="leading" secondItem="fhT-sr-JEy" secondAttribute="leadingMargin" id="F25-OZ-gcL"/>
+                            <constraint firstItem="bma-RW-lu7" firstAttribute="trailing" secondItem="fhT-sr-JEy" secondAttribute="trailingMargin" id="O5L-Ua-khl"/>
+                            <constraint firstItem="bma-RW-lu7" firstAttribute="leading" secondItem="bJ8-bx-AuL" secondAttribute="leading" id="RCG-zC-Gvi"/>
+                            <constraint firstItem="bma-RW-lu7" firstAttribute="top" secondItem="bJ8-bx-AuL" secondAttribute="bottom" constant="8" symbolic="YES" id="gum-6r-2Gn"/>
+                            <constraint firstItem="lYo-uR-btJ" firstAttribute="top" secondItem="bma-RW-lu7" secondAttribute="bottom" constant="421" id="xJe-xP-9pJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tag Location" id="fV4-r9-W3Y">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="iHq-nF-MNT">
+                            <connections>
+                                <segue destination="BeU-nh-7zV" kind="unwind" unwindAction="cancelTagLocationViewController:" id="nDP-P6-IrL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="oOA-8n-vr4">
+                            <connections>
+                                <segue destination="BeU-nh-7zV" kind="unwind" unwindAction="confirmTagLocationViewController:" id="nIQ-AO-7Np"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="locationTextView" destination="bma-RW-lu7" id="Ue9-AL-paI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLZ-Dw-SS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BeU-nh-7zV" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4059" y="1302"/>
+        </scene>
         <!--Trips-->
         <scene sceneID="PJV-Kz-PiS">
             <objects>
@@ -129,10 +215,13 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="gbX-Q8-ebA" kind="show" id="Yvu-ZY-YgS"/>
+                                            <segue destination="gbX-Q8-ebA" kind="show" identifier="TripViewCtrlrSegue" id="Yvu-ZY-YgS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="APd-lC-gi5" id="MDe-Df-Mui"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <constraints>
@@ -192,10 +281,29 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSG-Zk-f4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2427" y="615"/>
+            <point key="canvasLocation" x="2535" y="609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="the-cp-oy0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WyA-JO-RHm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vbJ-NB-SGk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RWf-TA-sQ7" kind="relationship" relationship="rootViewController" id="3cC-Us-6QY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wHM-G4-fAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3247" y="1302"/>
         </scene>
     </scenes>
     <resources>
         <image name="Camera" width="50" height="50"/>
+        <image name="locationtag" width="50" height="50"/>
     </resources>
 </document>
