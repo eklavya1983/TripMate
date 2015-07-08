@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		69B3022E4DAE9243ABCEB481 /* Pods_TripMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669672653D57618C1371A5A2 /* Pods_TripMate.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E304833E1B458DE000320B4C /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304833D1B458DE000320B4C /* TripViewController.swift */; };
+		E36BB6F01B458AC200CBF0F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB6EF1B458AC200CBF0F9 /* AppDelegate.swift */; };
+		E36BB6F51B458AC200CBF0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36BB6F31B458AC200CBF0F9 /* Main.storyboard */; };
+		E36BB6F71B458AC200CBF0F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36BB6F61B458AC200CBF0F9 /* Images.xcassets */; };
+		E36BB6FA1B458AC200CBF0F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E36BB6F81B458AC200CBF0F9 /* LaunchScreen.xib */; };
+		E36BB7061B458AC200CBF0F9 /* TripMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB7051B458AC200CBF0F9 /* TripMateTests.swift */; };
+		E37901901B4C2D6A0092322A /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379018F1B4C2D6A0092322A /* TripListViewController.swift */; };
+		E37901921B4C2DFA0092322A /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37901911B4C2DFA0092322A /* NewTripViewController.swift */; };
+		E38213361B4B3933008AC283 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38213351B4B3933008AC283 /* Trip.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E36BB7001B458AC200CBF0F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E36BB6E21B458AC200CBF0F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E36BB6E91B458AC200CBF0F9;
+			remoteInfo = TripMate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5BE4479FA00BDE3E9103A3B0 /* Pods-TripMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-TripMate/Pods-TripMate.release.xcconfig"; sourceTree = "<group>"; };
+		669672653D57618C1371A5A2 /* Pods_TripMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2235AE6767690E378CB2C7E /* Pods-TripMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TripMate/Pods-TripMate.debug.xcconfig"; sourceTree = "<group>"; };
+		E304833D1B458DE000320B4C /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		E36BB6EA1B458AC200CBF0F9 /* TripMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36BB6EE1B458AC200CBF0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E36BB6EF1B458AC200CBF0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E36BB6F41B458AC200CBF0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E36BB6F61B458AC200CBF0F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E36BB6F91B458AC200CBF0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E36BB6FF1B458AC200CBF0F9 /* TripMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36BB7041B458AC200CBF0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E36BB7051B458AC200CBF0F9 /* TripMateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMateTests.swift; sourceTree = "<group>"; };
+		E379018F1B4C2D6A0092322A /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
+		E37901911B4C2DFA0092322A /* NewTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
+		E38213351B4B3933008AC283 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E36BB6E71B458AC200CBF0F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69B3022E4DAE9243ABCEB481 /* Pods_TripMate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36BB6FC1B458AC200CBF0F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2269B89ABA49998DD05D1C42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				669672653D57618C1371A5A2 /* Pods_TripMate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E620C375B9D5936635309A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2235AE6767690E378CB2C7E /* Pods-TripMate.debug.xcconfig */,
+				5BE4479FA00BDE3E9103A3B0 /* Pods-TripMate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E36BB6E11B458AC200CBF0F9 = {
+			isa = PBXGroup;
+			children = (
+				E36BB6EC1B458AC200CBF0F9 /* TripMate */,
+				E36BB7021B458AC200CBF0F9 /* TripMateTests */,
+				E36BB6EB1B458AC200CBF0F9 /* Products */,
+				6E620C375B9D5936635309A5 /* Pods */,
+				2269B89ABA49998DD05D1C42 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E36BB6EB1B458AC200CBF0F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E36BB6EA1B458AC200CBF0F9 /* TripMate.app */,
+				E36BB6FF1B458AC200CBF0F9 /* TripMateTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E36BB6EC1B458AC200CBF0F9 /* TripMate */ = {
+			isa = PBXGroup;
+			children = (
+				E304833D1B458DE000320B4C /* TripViewController.swift */,
+				E36BB6EF1B458AC200CBF0F9 /* AppDelegate.swift */,
+				E36BB6F31B458AC200CBF0F9 /* Main.storyboard */,
+				E379018F1B4C2D6A0092322A /* TripListViewController.swift */,
+				E37901911B4C2DFA0092322A /* NewTripViewController.swift */,
+				E36BB6F61B458AC200CBF0F9 /* Images.xcassets */,
+				E36BB6F81B458AC200CBF0F9 /* LaunchScreen.xib */,
+				E36BB6ED1B458AC200CBF0F9 /* Supporting Files */,
+				E38213351B4B3933008AC283 /* Trip.swift */,
+			);
+			path = TripMate;
+			sourceTree = "<group>";
+		};
+		E36BB6ED1B458AC200CBF0F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E36BB6EE1B458AC200CBF0F9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E36BB7021B458AC200CBF0F9 /* TripMateTests */ = {
+			isa = PBXGroup;
+			children = (
+				E36BB7051B458AC200CBF0F9 /* TripMateTests.swift */,
+				E36BB7031B458AC200CBF0F9 /* Supporting Files */,
+			);
+			path = TripMateTests;
+			sourceTree = "<group>";
+		};
+		E36BB7031B458AC200CBF0F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E36BB7041B458AC200CBF0F9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E36BB6E91B458AC200CBF0F9 /* TripMate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36BB7091B458AC200CBF0F9 /* Build configuration list for PBXNativeTarget "TripMate" */;
+			buildPhases = (
+				22A74143D7DC6C6FE0804C3B /* Check Pods Manifest.lock */,
+				E36BB6E61B458AC200CBF0F9 /* Sources */,
+				E36BB6E71B458AC200CBF0F9 /* Frameworks */,
+				E36BB6E81B458AC200CBF0F9 /* Resources */,
+				5DC6B16083CD785F0D4FF3BF /* Embed Pods Frameworks */,
+				E192F8FFEFB7556F037AD46B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TripMate;
+			productName = TripMate;
+			productReference = E36BB6EA1B458AC200CBF0F9 /* TripMate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E36BB6FE1B458AC200CBF0F9 /* TripMateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36BB70C1B458AC200CBF0F9 /* Build configuration list for PBXNativeTarget "TripMateTests" */;
+			buildPhases = (
+				E36BB6FB1B458AC200CBF0F9 /* Sources */,
+				E36BB6FC1B458AC200CBF0F9 /* Frameworks */,
+				E36BB6FD1B458AC200CBF0F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E36BB7011B458AC200CBF0F9 /* PBXTargetDependency */,
+			);
+			name = TripMateTests;
+			productName = TripMateTests;
+			productReference = E36BB6FF1B458AC200CBF0F9 /* TripMateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E36BB6E21B458AC200CBF0F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Rao;
+				TargetAttributes = {
+					E36BB6E91B458AC200CBF0F9 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					E36BB6FE1B458AC200CBF0F9 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = E36BB6E91B458AC200CBF0F9;
+					};
+				};
+			};
+			buildConfigurationList = E36BB6E51B458AC200CBF0F9 /* Build configuration list for PBXProject "TripMate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E36BB6E11B458AC200CBF0F9;
+			productRefGroup = E36BB6EB1B458AC200CBF0F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E36BB6E91B458AC200CBF0F9 /* TripMate */,
+				E36BB6FE1B458AC200CBF0F9 /* TripMateTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E36BB6E81B458AC200CBF0F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36BB6F51B458AC200CBF0F9 /* Main.storyboard in Resources */,
+				E36BB6FA1B458AC200CBF0F9 /* LaunchScreen.xib in Resources */,
+				E36BB6F71B458AC200CBF0F9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36BB6FD1B458AC200CBF0F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22A74143D7DC6C6FE0804C3B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5DC6B16083CD785F0D4FF3BF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TripMate/Pods-TripMate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E192F8FFEFB7556F037AD46B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TripMate/Pods-TripMate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E36BB6E61B458AC200CBF0F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E38213361B4B3933008AC283 /* Trip.swift in Sources */,
+				E37901901B4C2D6A0092322A /* TripListViewController.swift in Sources */,
+				E37901921B4C2DFA0092322A /* NewTripViewController.swift in Sources */,
+				E36BB6F01B458AC200CBF0F9 /* AppDelegate.swift in Sources */,
+				E304833E1B458DE000320B4C /* TripViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36BB6FB1B458AC200CBF0F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36BB7061B458AC200CBF0F9 /* TripMateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E36BB7011B458AC200CBF0F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E36BB6E91B458AC200CBF0F9 /* TripMate */;
+			targetProxy = E36BB7001B458AC200CBF0F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E36BB6F31B458AC200CBF0F9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E36BB6F41B458AC200CBF0F9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E36BB6F81B458AC200CBF0F9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E36BB6F91B458AC200CBF0F9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E36BB7071B458AC200CBF0F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E36BB7081B458AC200CBF0F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E36BB70A1B458AC200CBF0F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2235AE6767690E378CB2C7E /* Pods-TripMate.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TripMate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E36BB70B1B458AC200CBF0F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BE4479FA00BDE3E9103A3B0 /* Pods-TripMate.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TripMate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E36BB70D1B458AC200CBF0F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TripMateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TripMate.app/TripMate";
+			};
+			name = Debug;
+		};
+		E36BB70E1B458AC200CBF0F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TripMateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TripMate.app/TripMate";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E36BB6E51B458AC200CBF0F9 /* Build configuration list for PBXProject "TripMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36BB7071B458AC200CBF0F9 /* Debug */,
+				E36BB7081B458AC200CBF0F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36BB7091B458AC200CBF0F9 /* Build configuration list for PBXNativeTarget "TripMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36BB70A1B458AC200CBF0F9 /* Debug */,
+				E36BB70B1B458AC200CBF0F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36BB70C1B458AC200CBF0F9 /* Build configuration list for PBXNativeTarget "TripMateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36BB70D1B458AC200CBF0F9 /* Debug */,
+				E36BB70E1B458AC200CBF0F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E36BB6E21B458AC200CBF0F9 /* Project object */;
+}

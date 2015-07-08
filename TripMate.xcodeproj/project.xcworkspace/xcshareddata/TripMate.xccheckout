@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DC37A1FF-0097-4545-B1E7-3605C5A8896E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BE6288CA2011331B6559A317F1AA0B511E3B33AB</key>
+		<string>https://github.com/eklavya1983/playground.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>untitled folder/TripMate/TripMate.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BE6288CA2011331B6559A317F1AA0B511E3B33AB</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/eklavya1983/playground.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BE6288CA2011331B6559A317F1AA0B511E3B33AB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BE6288CA2011331B6559A317F1AA0B511E3B33AB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>playground</string>
+		</dict>
+	</array>
+</dict>
+</plist>

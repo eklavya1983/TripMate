@@ -1,0 +1,10 @@
+PODS:
+  - ImagePickerSheetController (0.1.4)
+
+DEPENDENCIES:
+  - ImagePickerSheetController (~> 0.1.4)
+
+SPEC CHECKSUMS:
+  ImagePickerSheetController: d0fa2d7ec9ffc70620c36578f173a61bab0546bd
+
+COCOAPODS: 0.37.2
