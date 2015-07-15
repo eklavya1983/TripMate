@@ -12,38 +12,22 @@ import Photos
 import ImagePickerSheetController
 import MobileCoreServices
 
-class TripViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
+class PhotoEntryCreator : NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    var parentCtrlr: UIViewController
+    var delegate: PhotoEntryCreatorDelegate?
     
-    // Models
-    var trip: Trip!
-    
-    // Outlets
-    @IBOutlet weak var entryTableView: UITableView!
-    
-    // Actions
-    @IBAction func cameraSelected(sender: UIBarButtonItem) {
-        self.presentImagePickerSheet()
+    init(parentCtrlr: UIViewController) {
+        self.parentCtrlr = parentCtrlr
     }
-    
-    // MARK: View Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        entryTableView.tableFooterView = UIView(frame: CGRect.zeroRect)
-        println("viewdidload: \(trip)")
-    }
-    
-    // MARK: Other Methods
-    
-    func presentImagePickerSheet() {
+    func presentPhotoEntryCreator() {
         let authorization = PHPhotoLibrary.authorizationStatus()
         
         if authorization == .NotDetermined {
             PHPhotoLibrary.requestAuthorization() { status in
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.presentImagePickerSheet()
+                    self.presentPhotoEntryCreator()
                 }
             }
-            
             return
         }
         
@@ -58,38 +42,88 @@ class TripViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 }
                 controller.sourceType = sourceType
                 
-                self.presentViewController(controller, animated: true, completion: nil)
+                self.parentCtrlr.presentViewController(controller, animated: true, completion: nil)
             }
             
             let controller = ImagePickerSheetController()
-            controller.addAction(ImageAction(title: NSLocalizedString("Take Photo Or Video", comment: "Action Title"), secondaryTitle: NSLocalizedString("Add comment", comment: "Action Title"), handler: { _ in
-                presentImagePickerController(.Camera)
-                }, secondaryHandler: { _, numberOfPhotos in
+            controller.addAction(ImageAction(
+                title: NSLocalizedString("Take Photo Or Video", comment: "Action Title"),
+                secondaryTitle: NSLocalizedString("Add comment", comment: "Action Title"),
+                handler: { _ in
+                    presentImagePickerController(.Camera)
+                },
+                secondaryHandler: { _, numberOfPhotos in
                     println("Comment \(numberOfPhotos) photos")
-            }))
-            controller.addAction(ImageAction(title: NSLocalizedString("Photo Library", comment: "Action Title"), secondaryTitle: { NSString.localizedStringWithFormat(NSLocalizedString("ImagePickerSheet.button1.Send %lu Photo", comment: "Action Title"), $0) as String}, handler: { _ in
-                presentImagePickerController(.PhotoLibrary)
-                }, secondaryHandler: { _, numberOfPhotos in
-                    controller.getSelectedImagesWithCompletion() { images in
-                        println("Send \(images) photos")
+                }))
+            controller.addAction(ImageAction(
+                title: NSLocalizedString("Photo Library", comment: "Action Title"),
+                secondaryTitle: { NSString.localizedStringWithFormat(NSLocalizedString("ImagePickerSheet.button1.Send %lu Photo", comment: "Action Title"), $0) as String},
+                handler: { _ in
+                    presentImagePickerController(.PhotoLibrary)
+                },
+                secondaryHandler: { _, numberOfPhotos in
+                    let assets = controller.getSelectedAssets()
+                    let tripEntry = TripEntry()
+                    tripEntry.images = assets.map { asset in
+                        let info = ImageInfo()
+                        info.localPath = asset.localIdentifier
+                        return info
                     }
-            }))
+                    if (assets.count > 0) {
+                        tripEntry.location = assets[0].location
+                    }
+                    self.delegate?.photoentryCreator(self, createdEntry: tripEntry)
+                    println("Send \(assets.count) photos")
+                }))
             controller.addAction(ImageAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: { _ in
                 println("Cancelled")
             }))
             
-            presentViewController(controller, animated: true, completion: nil)
-        }
-        else {
+            parentCtrlr.presentViewController(controller, animated: true, completion: nil)
+        } else {
             let alertView = UIAlertView(title: NSLocalizedString("An error occurred", comment: "An error occurred"), message: NSLocalizedString("ImagePickerSheet needs access to the camera roll", comment: "ImagePickerSheet needs access to the camera roll"), delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "OK"))
             alertView.show()
         }
     }
-    
-    // MARK: UIImagePickerControllerDelegate
-    
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: nil)
+        parentCtrlr.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+protocol PhotoEntryCreatorDelegate {
+    func photoentryCreator(creator: PhotoEntryCreator, createdEntry entry: TripEntry)
+}
+
+class TripViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PhotoEntryCreatorDelegate {
+    
+    // Models
+    var trip: Trip!
+    
+    // Controls
+    var photoEntryCreator: PhotoEntryCreator!
+    
+    // Outlets
+    @IBOutlet weak var entryTableView: UITableView!
+    
+    // Actions
+    @IBAction func cameraSelected(sender: UIBarButtonItem) {
+        photoEntryCreator.presentPhotoEntryCreator()
+    }
+    
+    // MARK: View Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        photoEntryCreator = PhotoEntryCreator(parentCtrlr: self)
+        photoEntryCreator.delegate = self
+        
+        // Remove footer
+        entryTableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        var longPressGesture = UILongPressGestureRecognizer(target: self, action: "tableViewLongPressed:")
+        longPressGesture.minimumPressDuration = 1.0
+        entryTableView.addGestureRecognizer(longPressGesture)
+        
+        println("viewdidload: \(trip)")
     }
     
     // Tag location related
@@ -102,9 +136,7 @@ class TripViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             if !notes.isEmpty {
                 var entry = TripEntry()
                 entry.text = notes
-                trip.addEntry(entry)
-                println("Added new trip entry")
-                entryTableView.reloadData()
+                addEntry(entry)
             }
         }
     }
@@ -121,12 +153,64 @@ class TripViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         return cnt
     }
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TripEntryCell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = trip.getEntry(indexPath.row).text
-        //        cell.detailTextLabel.text = "Subtitle #\(indexPath.row)"
+        let imageManager = PHImageManager.defaultManager()
+        let entry = trip.getEntry(indexPath.row)
+        let cell = tableView.dequeueReusableCellWithIdentifier("TripEntryCell", forIndexPath: indexPath) as! TripEntryTableViewCell
+        cell.infoLabel.text = trip.getEntry(indexPath.row).text
+        if entry.images != nil && entry.images!.count > 0  && entry.images![0].localPath != nil {
+            let fetchRes = PHAsset.fetchAssetsWithLocalIdentifiers([entry.images![0].localPath!], options: nil)
+            fetchRes.enumerateObjectsUsingBlock { (obj, _, _) in
+                if let asset = obj as? PHAsset {                    
+                    let options = PHImageRequestOptions()
+                    options.deliveryMode = .HighQualityFormat
+                    imageManager.requestImageForAsset(asset, targetSize: PHImageManagerMaximumSize, contentMode: .AspectFill, options: options) { image, _ in
+                        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? TripEntryTableViewCell {
+                            cell.pictureView.image = image
+                        }
+                    }
+                }
+            }
+        } else {
+            cell.pictureView.image = UIImage(named: "travel")
+        }
         return cell
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 44
+
+    
+    func tableViewLongPressed(longPress: UIGestureRecognizer) {
+        if longPress.state == UIGestureRecognizerState.Began {
+            let point = longPress.locationInView(entryTableView)
+            let indexPath = entryTableView.indexPathForRowAtPoint(point)
+            if indexPath != nil {
+                println("longpressed on: \(indexPath)")
+                let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in}
+                let deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (action) in
+                    self.removeEntry(indexPath!)
+                }
+                alertController.addAction(cancelAction)
+                alertController.addAction(deleteAction)
+                
+                self.presentViewController(alertController, animated: true) {}
+            }
+
+        }
     }
+    
+    // MARK: PhotoEntryCreator related
+    func photoentryCreator(creator: PhotoEntryCreator, createdEntry entry: TripEntry) {
+        addEntry(entry)
+    }
+    
+    func addEntry(entry: TripEntry) {
+        trip.addEntry(entry)
+        println("Added new trip entry: \(entry)")
+        entryTableView.reloadData()
+    }
+    
+    func removeEntry(indexPath: NSIndexPath) {
+        trip.removeEntry(indexPath.row)
+        entryTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+
 }

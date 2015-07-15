@@ -22,7 +22,7 @@
 		<key>0B7A8A393A79A489566D4F419CF8D8E6F08432C4</key>
 		<string>..</string>
 		<key>BE6288CA2011331B6559A317F1AA0B511E3B33AB</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/eklavya1983/TripMate.git</string>
@@ -38,7 +38,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>BE6288CA2011331B6559A317F1AA0B511E3B33AB</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

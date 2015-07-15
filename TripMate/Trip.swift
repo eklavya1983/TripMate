@@ -7,17 +7,27 @@
 //
 
 import Foundation
+import UIKit
+import CoreLocation
 
 class ImageInfo {
     var id: String!
     // TODO(Rao): May need to make it something other than a string
     var localPath: String?
+    var image: UIImage?
 }
 
-class TripEntry {
+class TripEntry : Printable {
     var id: String?
     var text: String?
     var images: [ImageInfo]?
+    var location: CLLocation?
+    var description: String {
+        let unknown = "unknown"
+        return "id: \(id)" +
+            " text: \(text)" +
+            " location: \(location ?? unknown)"
+    }
 }
 
 class Trip {
@@ -29,13 +39,16 @@ class Trip {
         self.info = Info(name: name)
     }
     func addEntry(entry: TripEntry) {
-        entries.append(entry)
+        entries.insert(entry, atIndex: 0)
     }
     func getEntry(idx: Int) -> TripEntry {
         return entries[idx]
     }
     func getEntriesCount() -> Int {
         return entries.count
+    }
+    func removeEntry(index: Int) {
+        entries.removeAtIndex(index)
     }
     
     var info: Info

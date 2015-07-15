@@ -49,6 +49,7 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
             let cell = sender as! UITableViewCell
             let tripViewCtrlr = segue.destinationViewController as! TripViewController
             tripViewCtrlr.trip = tripMgr.getTrip(tripListTableView.indexPathForCell(cell)!.row)
+            tripViewCtrlr.title = tripViewCtrlr.trip.info.name
             println("prepseque: \(tripViewCtrlr.trip)")
         }
     }

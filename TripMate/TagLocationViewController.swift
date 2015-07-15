@@ -15,9 +15,10 @@ class TagLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // RoundedRect border around locationTextView
-        self.locationTextView.layer.borderWidth = 5.0
-        self.locationTextView.layer.borderColor = UIColor.grayColor().CGColor
+        self.locationTextView.layer.borderWidth = 1.0
+        self.locationTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
         self.locationTextView.layer.cornerRadius = 8
+        self.locationTextView.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }

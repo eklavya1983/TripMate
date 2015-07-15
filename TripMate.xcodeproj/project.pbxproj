@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		69B3022E4DAE9243ABCEB481 /* Pods_TripMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669672653D57618C1371A5A2 /* Pods_TripMate.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E304833E1B458DE000320B4C /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304833D1B458DE000320B4C /* TripViewController.swift */; };
+		E33D79DD1B4E18D600D9B87A /* TripEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D79DC1B4E18D600D9B87A /* TripEntryTableViewCell.swift */; };
 		E36BB6F01B458AC200CBF0F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BB6EF1B458AC200CBF0F9 /* AppDelegate.swift */; };
 		E36BB6F51B458AC200CBF0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36BB6F31B458AC200CBF0F9 /* Main.storyboard */; };
 		E36BB6F71B458AC200CBF0F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36BB6F61B458AC200CBF0F9 /* Images.xcassets */; };
@@ -35,6 +36,7 @@
 		669672653D57618C1371A5A2 /* Pods_TripMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2235AE6767690E378CB2C7E /* Pods-TripMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TripMate/Pods-TripMate.debug.xcconfig"; sourceTree = "<group>"; };
 		E304833D1B458DE000320B4C /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		E33D79DC1B4E18D600D9B87A /* TripEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripEntryTableViewCell.swift; sourceTree = "<group>"; };
 		E36BB6EA1B458AC200CBF0F9 /* TripMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BB6EE1B458AC200CBF0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E36BB6EF1B458AC200CBF0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		E36BB6E11B458AC200CBF0F9 = {
 			isa = PBXGroup;
 			children = (
+				E33D79DC1B4E18D600D9B87A /* TripEntryTableViewCell.swift */,
 				E36BB6EC1B458AC200CBF0F9 /* TripMate */,
 				E36BB7021B458AC200CBF0F9 /* TripMateTests */,
 				E36BB6EB1B458AC200CBF0F9 /* Products */,
@@ -303,6 +306,7 @@
 				E38213361B4B3933008AC283 /* Trip.swift in Sources */,
 				E37901901B4C2D6A0092322A /* TripListViewController.swift in Sources */,
 				E37901921B4C2DFA0092322A /* NewTripViewController.swift in Sources */,
+				E33D79DD1B4E18D600D9B87A /* TripEntryTableViewCell.swift in Sources */,
 				E36BB6F01B458AC200CBF0F9 /* AppDelegate.swift in Sources */,
 				E304833E1B458DE000320B4C /* TripViewController.swift in Sources */,
 			);
